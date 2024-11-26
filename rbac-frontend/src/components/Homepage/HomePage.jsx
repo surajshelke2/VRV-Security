@@ -23,28 +23,34 @@ const data = [
 
 const HomePage = () => {
   return (
-    <Box sx={{ padding: 4, backgroundColor: "#f9f9f9", minHeight: "100vh" }}>
-      {/* Header */}
-      
+    <Box
+      sx={{
+        padding: 4,
+        backgroundColor: "#121212", // Dark background
+        color: "#fff", // White text for better contrast
+        minHeight: "100vh",
+      }}
+    >
       <Box
         sx={{
           marginBottom: 4,
           textAlign: "center",
           padding: 2,
-          backgroundColor: "#3f51b5",
+          backgroundColor: "#3f51b5", // Primary color
           color: "#fff",
           borderRadius: 2,
         }}
       >
-        <Typography variant="h3">RBAC Management System</Typography>
+        <Typography variant="h3">VRV Management System</Typography>
       </Box>
-      <Typography variant="subtitle1">
-          Manage roles, permissions, and users seamlessly.
-        </Typography>
+      <Typography variant="subtitle1" sx={{ color: "#ccc" }}>
+        Manage roles, permissions, and users seamlessly.
+      </Typography>
+
       {/* Statistics */}
       <Grid container spacing={3} sx={{ marginBottom: 4 }}>
         <Grid item xs={12} sm={6} md={3}>
-          <Card>
+          <Card sx={{ backgroundColor: "#333" }}>
             <CardContent>
               <Typography variant="h6" color="textSecondary">
                 Total Users
@@ -56,7 +62,7 @@ const HomePage = () => {
           </Card>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-          <Card>
+          <Card sx={{ backgroundColor: "#333" }}>
             <CardContent>
               <Typography variant="h6" color="textSecondary">
                 Active Users
@@ -68,7 +74,7 @@ const HomePage = () => {
           </Card>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-          <Card>
+          <Card sx={{ backgroundColor: "#333" }}>
             <CardContent>
               <Typography variant="h6" color="textSecondary">
                 Inactive Users
@@ -80,7 +86,7 @@ const HomePage = () => {
           </Card>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-          <Card>
+          <Card sx={{ backgroundColor: "#333" }}>
             <CardContent>
               <Typography variant="h6" color="textSecondary">
                 Total Roles
@@ -92,7 +98,7 @@ const HomePage = () => {
           </Card>
         </Grid>
         <Grid item xs={12} sm={6} md={6}>
-          <Card>
+          <Card sx={{ backgroundColor: "#333" }}>
             <CardContent>
               <Typography variant="h6" color="textSecondary">
                 User Role Distribution
@@ -126,37 +132,36 @@ const HomePage = () => {
         <Typography variant="h5" sx={{ marginBottom: 2 }}>
           Recent Activity
         </Typography>
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper} sx={{ backgroundColor: "#333", color: "#fff" }}>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell><strong>Action</strong></TableCell>
-                <TableCell><strong>User/Role</strong></TableCell>
-                <TableCell><strong>Date</strong></TableCell>
+                <TableCell sx={{ color: "#fff" }}><strong>Action</strong></TableCell>
+                <TableCell sx={{ color: "#fff" }}><strong>User/Role</strong></TableCell>
+                <TableCell sx={{ color: "#fff" }}><strong>Date</strong></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               <TableRow>
-                <TableCell>Added New User</TableCell>
-                <TableCell>Alice Johnson</TableCell>
-                <TableCell>2024-11-23</TableCell>
+                <TableCell sx={{ color: "#fff" }}>Added New User</TableCell>
+                <TableCell sx={{ color: "#fff" }}>Alice Johnson</TableCell>
+                <TableCell sx={{ color: "#fff" }}>2024-11-23</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Updated Role</TableCell>
-                <TableCell>Admin</TableCell>
-                <TableCell>2024-11-22</TableCell>
+                <TableCell sx={{ color: "#fff" }}>Updated Role</TableCell>
+                <TableCell sx={{ color: "#fff" }}>Admin</TableCell>
+                <TableCell sx={{ color: "#fff" }}>2024-11-22</TableCell>
               </TableRow>
             </TableBody>
           </Table>
         </TableContainer>
       </Box>
 
-      <Box sx={{ textAlign: "right"}}>
+      <Box sx={{ textAlign: "right" }}>
         <Button variant="outlined" color="error" size="large">
           Logout
         </Button>
       </Box>
-     
     </Box>
   );
 };

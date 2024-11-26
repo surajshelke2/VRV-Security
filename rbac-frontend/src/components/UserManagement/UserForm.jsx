@@ -22,7 +22,7 @@ const UserForm = ({ onAddUser }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (user.name && user.email) {
-      onAddUser(user); // Pass new user back to parent
+      onAddUser(user); 
     } else {
       alert("Please fill out all fields.");
     }

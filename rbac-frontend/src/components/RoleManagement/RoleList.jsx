@@ -12,7 +12,7 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
-import RoleForm from "./RoleForm"; // Import the form
+import RoleForm from "./RoleForm";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -33,7 +33,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-// Hardcoded data
 const hardcodedRoles = [
   { id: 1, name: "Admin", permissions: ["Read", "Write", "Delete"] },
   { id: 2, name: "Editor", permissions: ["Read", "Write"] },
@@ -42,28 +41,28 @@ const hardcodedRoles = [
 
 const RoleList = () => {
   const [roles, setRoles] = useState([]);
-  const [editingRole, setEditingRole] = useState(null); // Track role being edited
-  const [openForm, setOpenForm] = useState(false); // Toggle for modal dialog
+  const [editingRole, setEditingRole] = useState(null); 
+  const [openForm, setOpenForm] = useState(false);
 
   useEffect(() => {
-    // Simulate fetching roles
+  
     setRoles(hardcodedRoles);
   }, []);
 
   const handleSaveRole = (savedRole) => {
     if (savedRole) {
       if (savedRole.id) {
-        // Update existing role
+      
         setRoles((prev) =>
           prev.map((role) => (role.id === savedRole.id ? savedRole : role))
         );
       } else {
-        // Add new role
+       
         setRoles((prev) => [...prev, { ...savedRole, id: Date.now() }]);
       }
     }
-    setOpenForm(false); // Close form after saving
-    setEditingRole(null); // Reset editing role
+    setOpenForm(false); 
+    setEditingRole(null);
   };
 
   const handleDelete = (id) => {
@@ -77,7 +76,7 @@ const RoleList = () => {
         color="primary"
         onClick={() => {
           setOpenForm(true);
-          setEditingRole(null); // Ensure no role is pre-loaded for "Add"
+          setEditingRole(null); 
         }}
         style={{ marginBottom: "16px" }}
       >
@@ -107,7 +106,7 @@ const RoleList = () => {
                     color="secondary"
                     onClick={() => {
                       setOpenForm(true);
-                      setEditingRole(role); // Pass role to form for editing
+                      setEditingRole(role); 
                     }}
                     style={{ marginRight: "8px" }}
                   >
